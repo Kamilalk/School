@@ -1,39 +1,33 @@
 package com.krukowska.controller;
 
 import com.krukowska.domain.Teacher;
-import com.krukowska.service.TeacherService;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.http.ResponseEntity;
+import com.krukowska.service.ITeacherService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-
 @RestController
 @RequestMapping("api/teachers")
 public class TeacherController {
+    private final ITeacherService iteacherService;
 
-
-    private TeacherService teacherService;
-
-    public TeacherController(@Qualifier("teacherConstructor") TeacherService teacherService){
-        this.teacherService = teacherService;
+    public TeacherController(ITeacherService iteacherService){
+        this.iteacherService = iteacherService;
     }
-
-    @GetMapping("/teachers")
+    @GetMapping
     public List<Teacher> getAllTeachers() {
-        return teacherService.findAll();
+        return iteacherService.findAll();
     }
 
     @GetMapping("/teachers/{id}")
-    public List<Teacher> getTeacherById(@PathVariable long id) {
-         return teacherService.getTeacherId(id);
+    public List<Teacher> getTeacherById(@PathVariable Long id) {
+         return iteacherService.getTeacherId(id);
     }
 
-    //@GetMapping("/teachers")
-    //public Teacher createTeacher(@RequestBody Teacher teacher){
-      //  return teacherService.save(teacher);
-    //}
+    @PostMapping("/createTeacher")
+    public Teacher createTeacher(@RequestBody Teacher teacher){
+        return iteacherService.createTeacher(teacher);
+    }
 
     
 }

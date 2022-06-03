@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 @Service
 public class TeacherService implements ITeacherService{
 
-    private TeacherRepository teacherRepository;
+    private final TeacherRepository teacherRepository;
 
     public TeacherService(TeacherRepository teacherRepository) {
         this.teacherRepository = teacherRepository;
@@ -23,5 +23,16 @@ public class TeacherService implements ITeacherService{
     public List<Teacher> getTeacherId(long id){
         return findAll().stream().filter(teacher -> teacher.getId() == id)
                 .collect(Collectors.toList());
+    }
+
+    public Teacher createTeacher(Teacher teacher){
+        Teacher newTeacher = new Teacher();
+        newTeacher.setFirstName(teacher.getFirstName());
+        newTeacher.setLastName(teacher.getFirstName());
+        newTeacher.setAge(teacher.getAge());
+        newTeacher.setGender(teacher.getGender());
+        newTeacher.setSubject(teacher.getSubject());
+
+        return teacherRepository.save(newTeacher);
     }
 }

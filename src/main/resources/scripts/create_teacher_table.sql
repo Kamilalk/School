@@ -1,6 +1,6 @@
 
-CREATE TABLE if NOT EXISTS countries (
-    id             VARCHAR(36)  NOT NULL CONSTRAINT countries_pkey PRIMARY KEY,
+CREATE TABLE if NOT EXISTS teachers (
+    id             bigint  NOT NULL CONSTRAINT teachers_pkey PRIMARY KEY,
     firts_name     VARCHAR(255) NOT NULL,
     last_name      VARCHAR(255) NOT NULL,
     age            INT          NOT NULL,
