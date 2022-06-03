@@ -2,19 +2,26 @@ package com.krukowska.service;
 
 import com.krukowska.domain.Teacher;
 import com.krukowska.repository.TeacherRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
+@Service
 public class TeacherService implements ITeacherService{
 
-    @Autowired
     private TeacherRepository teacherRepository;
 
-    @Override
-    public List<Teacher> findAll() {
-        var teachers =(List<Teacher>) teacherRepository.findAll();
+    public TeacherService(TeacherRepository teacherRepository) {
+        this.teacherRepository = teacherRepository;
+    }
 
-        return teachers;
+    public List<Teacher> findAll() {
+        return teacherRepository.findAll();
+    }
+
+    public List<Teacher> getTeacherId(long id){
+        return findAll().stream().filter(teacher -> teacher.getId() == id)
+                .collect(Collectors.toList());
     }
 }
