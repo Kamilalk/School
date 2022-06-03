@@ -1,6 +1,6 @@
 package com.krukowska.domain;
 
-public enum Subjects {
+public enum Subject {
     ENGLISH,
     IRISH,
     MATHS,

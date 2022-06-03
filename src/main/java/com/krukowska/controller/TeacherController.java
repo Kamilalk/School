@@ -23,9 +23,9 @@ public class TeacherController {
         return teacherRepository.findAll();
     }
 
-    //@GetMapping("/teachers/{id}")
-   // public ResponseEntity<Teacher> getEmployeeBy
-    //}
+    @GetMapping("/teachers/{id}")
+    public ResponseEntity<Teacher> getTeacherById(@Pag
+    }
 
     @GetMapping("/employees")
     public Teacher createTeacher(@RequestBody Teacher teacher){
