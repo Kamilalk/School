@@ -1,7 +1,7 @@
 package com.krukowska.controller;
 
 import com.krukowska.domain.Teacher;
-import com.krukowska.service.imp.ITeacherService;
+import com.krukowska.service.ITeacherService;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
@@ -20,7 +20,8 @@ public class TeacherController {
 
     @GetMapping("/getByID/{id}")
     public Teacher getTeacherById(@PathVariable String id) {
-         return iteacherService.getTeacherById(id);
+        return iteacherService.getTeacherById(id);
+
     }
 
     @PostMapping("/create")

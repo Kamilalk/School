@@ -1,7 +1,7 @@
 package com.krukowska.controller;
 
 import com.krukowska.domain.Student;
-import com.krukowska.service.imp.IStudentService;
+import com.krukowska.service.IStudentService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

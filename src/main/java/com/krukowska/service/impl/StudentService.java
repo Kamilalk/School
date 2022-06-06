@@ -1,8 +1,9 @@
-package com.krukowska.service;
+package com.krukowska.service.impl;
 
 import com.krukowska.domain.Student;
+import com.krukowska.exeption.TeacherException;
 import com.krukowska.repository.StudentRepository;
-import com.krukowska.service.imp.IStudentService;
+import com.krukowska.service.IStudentService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,15 +17,15 @@ public class StudentService implements IStudentService {
     }
 
 
-    public List<Student> findAll(){
+    public List<Student> findAll() {
         return studentRepository.findAll();
     };
 
 
-    public Student findStudentById(String id){
-        return studentRepository.findById(id).orElse(null);
+    public Student findStudentById(String id) {
+        return studentRepository.findById(id)
+                .orElseThrow(() -> new TeacherException("No Student under the id : " + id));
     }
-
 
     public Student createStudent(Student student){
         return studentRepository.save(student);

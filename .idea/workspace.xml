@@ -5,26 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92ba5243-8668-4380-8065-86cf725dd0c4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/controller/StudentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/domain/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/domain/enums/ClassGroup.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/exeption/ApiExeptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/exeption/ApiRequestException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/repository/StudentRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/service/StudentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/service/imp/IStudentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/scripts/create_student_table.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/exeption/TeacherException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/controller/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/controller/StudentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/controller/TeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/controller/TeacherController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/domain/Gender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/domain/enums/Gender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/domain/Subject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/domain/enums/Subject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/domain/Teacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/domain/Teacher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/repository/TeacherRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/repository/TeacherRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/service/ITeacherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/service/imp/ITeacherService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/service/TeacherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/service/TeacherService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/scripts/create_teacher_table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/scripts/create_teacher_table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/krukowska/Teacher.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/scripts/create_teacher_table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/scripts/create_teacher_table.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/exeption/ApiException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/exeption/ApiException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/exeption/ApiExeptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/exeption/ApiExeptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/exeption/ApiRequestException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/service/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/service/impl/StudentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/service/TeacherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/service/impl/TeacherService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/service/imp/IStudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/service/IStudentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/service/imp/ITeacherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/service/ITeacherService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -1,4 +1,4 @@
-package com.krukowska.service.imp;
+package com.krukowska.service;
 
 import com.krukowska.domain.Student;
 

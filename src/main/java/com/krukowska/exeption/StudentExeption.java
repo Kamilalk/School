@@ -1,4 +1,4 @@
 package com.krukowska.exeption;
 
-public class ApiException {
+public class StudentExeption {
 }
