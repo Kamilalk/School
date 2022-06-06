@@ -39,6 +39,10 @@ public class Teacher {
     @Enumerated(EnumType.STRING)
     private Subject subject;
 
+    @Column(name = "pesel", nullable = false)
+    @Enumerated(EnumType.STRING)
+    private String pesel;
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

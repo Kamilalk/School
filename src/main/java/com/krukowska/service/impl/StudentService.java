@@ -1,9 +1,11 @@
 package com.krukowska.service.impl;
 
 import com.krukowska.domain.Student;
-import com.krukowska.exeption.TeacherException;
+import com.krukowska.exception.StudentRequestException;
+import com.krukowska.exception.TeacherRequestException;
 import com.krukowska.repository.StudentRepository;
 import com.krukowska.service.IStudentService;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -24,7 +26,7 @@ public class StudentService implements IStudentService {
 
     public Student findStudentById(String id) {
         return studentRepository.findById(id)
-                .orElseThrow(() -> new TeacherException("No Student under the id : " + id));
+                .orElseThrow(() -> new StudentRequestException("No Student under the id : " + id, HttpStatus.NOT_FOUND));
     }
 
     public Student createStudent(Student student){

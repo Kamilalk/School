@@ -1,4 +1,4 @@
-package com.krukowska.exeption;
+package com.krukowska.exception;
 
 import lombok.Getter;
 import org.springframework.http.HttpStatus;
@@ -6,14 +6,16 @@ import org.springframework.http.HttpStatus;
 import java.time.ZonedDateTime;
 
 @Getter
-public class TeacherExeption {
+public class TeacherException {
     private final String message;
-    private final HttpStatus httpStatus;
+    private final HttpStatus status;
     private final ZonedDateTime timestamp;
 
-    public TeacherExeption(String message, HttpStatus httpStatus, ZonedDateTime timestamp) {
+    public TeacherException(String message, HttpStatus status, ZonedDateTime timestamp) {
         this.message = message;
-        this.httpStatus = httpStatus;
+        this.status = status;
         this.timestamp = timestamp;
     }
 }
+
+

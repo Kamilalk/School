@@ -12,7 +12,6 @@ public class StudentController {
 
     private final IStudentService iStudentService;
 
-
     public StudentController(IStudentService iStudentService) {
         this.iStudentService = iStudentService;
     }

@@ -7,3 +7,6 @@ CREATE TABLE if NOT EXISTS students (
     gender      VARCHAR(25) NOT NULL,
     class_group  VARCHAR(25) NOT NULL
 )
+
+ALTER TABLE students
+ADD COLUMN pesel
