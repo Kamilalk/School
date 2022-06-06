@@ -1,4 +1,4 @@
-package com.krukowska.domain;
+package com.krukowska.domain.enums;
 
 public enum Subject {
     ENGLISH,

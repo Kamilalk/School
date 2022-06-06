@@ -5,13 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92ba5243-8668-4380-8065-86cf725dd0c4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/controller/StudentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/domain/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/domain/enums/ClassGroup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/exeption/ApiExeptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/exeption/ApiRequestException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/repository/StudentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/service/StudentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/service/imp/IStudentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/scripts/create_student_table.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/controller/TeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/controller/TeacherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/domain/Gender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/domain/enums/Gender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/domain/Subject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/domain/enums/Subject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/domain/Teacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/domain/Teacher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/repository/TeacherRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/repository/TeacherRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/service/ITeacherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/service/ITeacherService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/service/ITeacherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/service/imp/ITeacherService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/service/TeacherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/service/TeacherService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/scripts/create_teacher_table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/scripts/create_teacher_table.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/krukowska/Teacher.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/scripts/create_teacher_table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/scripts/create_teacher_table.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,25 +64,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/03KLK/Desktop/projects/School",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/03KLK/Desktop/projects/School&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.com.krukowska.TeacherApplication">
-    <configuration name="com.krukowska.TeacherApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="TeacherApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <envs>
         <env name="spring.profiles.active" value="dev" />
       </envs>
       <option name="MAIN_CLASS_NAME" value="com.krukowska.TeacherApplication" />
-      <module name="demo" />
+      <module name="School" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.krukowska.domain.*" />
+          <option name="PATTERN" value="com.krukowska.domain.enums.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -81,7 +94,7 @@
       <module name="demo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.krukowska.domain.*" />
+          <option name="PATTERN" value="com.krukowska.domain.enums.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -96,7 +109,7 @@
       <module name="demo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.krukowska.domain.*" />
+          <option name="PATTERN" value="com.krukowska.domain.enums.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -115,6 +128,7 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.com.krukowska.TeacherApplication" />
         <item itemvalue="JUnit.TeacherApplicationTests.contextLoads" />
         <item itemvalue="JUnit.TeacherApplicationTests" />
       </list>
@@ -141,5 +155,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$PROJECT_DIR$/../../../../../Program Files/Java/jdk-17.0.3/lib/src.zip!/java.base/java/lang/Object.java</url>
+          <line>162</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

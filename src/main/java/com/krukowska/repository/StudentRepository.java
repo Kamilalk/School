@@ -1,10 +1,10 @@
 package com.krukowska.repository;
 
-import com.krukowska.domain.Teacher;
+import com.krukowska.domain.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface TeacherRepository extends JpaRepository<Teacher, String>{
+public interface StudentRepository extends JpaRepository<Student, String>{
 
 }

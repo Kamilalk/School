@@ -1,5 +1,6 @@
 package com.krukowska.domain;
 
+import com.krukowska.domain.enums.ClassGroup;
 import com.krukowska.domain.enums.Gender;
 import com.krukowska.domain.enums.Subject;
 import lombok.AllArgsConstructor;
@@ -10,12 +11,13 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 
-@Setter
 @Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name = "teachers")
-public class Teacher {
+@Entity(name = "Students")
+public class Student {
+
     @Id
     @Column(name = "id",updatable = false, nullable = false,  unique = true)
     @GeneratedValue(generator = "UUID")
@@ -39,18 +41,8 @@ public class Teacher {
     @Enumerated(EnumType.STRING)
     private Subject subject;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+    @Column(name = "class_group", nullable = false)
+    @Enumerated(EnumType.STRING)
+    private ClassGroup classGroup;
 
-        Teacher teacher = (Teacher) o;
-
-        return id != null ? id.equals(teacher.id) : teacher.id == null;
-    }
-
-    @Override
-    public int hashCode() {
-        return id != null ? id.hashCode() : 0;
-    }
 }

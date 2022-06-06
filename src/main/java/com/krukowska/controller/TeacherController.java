@@ -1,13 +1,12 @@
 package com.krukowska.controller;
 
 import com.krukowska.domain.Teacher;
-import com.krukowska.service.ITeacherService;
+import com.krukowska.service.imp.ITeacherService;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
-@RequestMapping("api/teachers")
+@RequestMapping("api/teacher")
 public class TeacherController {
     private final ITeacherService iteacherService;
 
@@ -19,17 +18,20 @@ public class TeacherController {
         return iteacherService.findAll();
     }
 
-    @GetMapping("/teachers/{id}")
-    public List<Teacher> getTeacherById(@PathVariable Long id) {
-         return iteacherService.getTeacherId(id);
+    @GetMapping("/getByID/{id}")
+    public Teacher getTeacherById(@PathVariable String id) {
+         return iteacherService.getTeacherById(id);
     }
 
-    @PostMapping("/createTeacher")
+    @PostMapping("/create")
     public Teacher createTeacher(@RequestBody Teacher teacher){
         return iteacherService.createTeacher(teacher);
     }
 
-    
+    @DeleteMapping ("deleteByID/{id}")
+    public void deleteTeacher(@PathVariable String id){
+         iteacherService.deleteTeacher(id);
+    }
 }
 
 
