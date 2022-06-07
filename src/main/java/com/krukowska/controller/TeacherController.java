@@ -33,6 +33,11 @@ public class TeacherController {
     public void deleteTeacher(@PathVariable String id){
          iteacherService.deleteTeacher(id);
     }
+
+    @GetMapping("/findByPesel/{pesel}")
+    public Teacher findTeacherByPesel(@PathVariable String pesel){
+        return iteacherService.findTeacherByPesel(pesel);
+    }
 }
 
 

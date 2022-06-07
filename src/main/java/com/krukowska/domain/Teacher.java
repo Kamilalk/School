@@ -40,7 +40,6 @@ public class Teacher {
     private Subject subject;
 
     @Column(name = "pesel", nullable = false)
-    @Enumerated(EnumType.STRING)
     private String pesel;
 
     @Override

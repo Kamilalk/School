@@ -2,17 +2,17 @@ package com.krukowska.service.impl;
 
 import com.krukowska.domain.Student;
 import com.krukowska.exception.StudentRequestException;
-import com.krukowska.exception.TeacherRequestException;
 import com.krukowska.repository.StudentRepository;
 import com.krukowska.service.IStudentService;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
+import java.sql.*;
 import java.util.List;
 
 @Service
 public class StudentService implements IStudentService {
-    private final StudentRepository studentRepository;
+    private final StudentRepository studentRepository ;
 
     public StudentService(StudentRepository studentRepository) {
         this.studentRepository = studentRepository;
@@ -37,5 +37,7 @@ public class StudentService implements IStudentService {
         studentRepository.deleteById(id);
     }
 
-
+    public Student findStudentByPesel(String pesel){
+        return studentRepository.findStudentByPesel(pesel);
+    }
 }

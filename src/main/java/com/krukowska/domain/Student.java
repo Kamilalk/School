@@ -46,7 +46,6 @@ public class Student {
     private ClassGroup classGroup;
 
     @Column(name = "pesel", nullable = false)
-    @Enumerated(EnumType.STRING)
     private String pesel;
 
 }

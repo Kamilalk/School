@@ -36,4 +36,9 @@ public class StudentController {
         iStudentService.deleteStudent(id);
     }
 
+    @GetMapping("/findByPesel/{pesel}")
+    public Student findStudentByPesel(@PathVariable String pesel){
+        return iStudentService.findStudentByPesel(pesel);
+    }
+
 }

@@ -33,4 +33,9 @@ public class TeacherService implements ITeacherService {
     public void deleteTeacher(String id){
          teacherRepository.deleteById(id);
     }
+
+    public Teacher findTeacherByPesel(String pesel){
+        return teacherRepository.findTeacherByPesel(pesel);
+    }
+
 }
