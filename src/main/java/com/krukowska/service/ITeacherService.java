@@ -1,11 +1,13 @@
 package com.krukowska.service;
 import com.krukowska.domain.Teacher;
+import com.krukowska.model.TeacherDTO;
+
 import java.util.List;
 
 public interface ITeacherService {
-    List<Teacher> findAll();
-    Teacher getTeacherById(String id);
-    Teacher createTeacher(Teacher teacher);
+    List<TeacherDTO> findAll();
+    TeacherDTO getTeacherById(String id);
+    TeacherDTO createTeacher(Teacher teacher);
     void deleteTeacher(String id);
-    Teacher findTeacherByPesel(String Pesel);
+    TeacherDTO findTeacherByPesel(String Pesel);
 }

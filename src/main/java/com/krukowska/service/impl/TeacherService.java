@@ -1,8 +1,9 @@
 package com.krukowska.service.impl;
 
-import com.krukowska.converter.StudentConverter;
+import com.krukowska.converter.TeacherConverter;
 import com.krukowska.domain.Teacher;
 import com.krukowska.exception.TeacherRequestException;
+import com.krukowska.model.TeacherDTO;
 import com.krukowska.repository.TeacherRepository;
 import com.krukowska.service.ITeacherService;
 import org.springframework.http.HttpStatus;
@@ -15,31 +16,37 @@ public class TeacherService implements ITeacherService {
 
     private final TeacherRepository teacherRepository;
 
+    private final TeacherConverter teacherConverter;
 
-    public TeacherService(TeacherRepository teacherRepository) {
+    public TeacherService(TeacherRepository teacherRepository, TeacherConverter teacherConverter) {
         this.teacherRepository = teacherRepository;
+        this.teacherConverter = teacherConverter;
     }
 
-    public List<Teacher> findAll() {
-        return teacherRepository.findAll() ;
+    public List<TeacherDTO> findAll() {
+        return teacherConverter.toDTO(teacherRepository.findAll());
     }
 
-    public Teacher getTeacherById(String id){
-         return teacherRepository.findById(id)
+    public TeacherDTO getTeacherById(String id){
+
+         Teacher teacher =  teacherRepository.findById(id)
                  .orElseThrow(() -> new TeacherRequestException("No Teacher under the id : " + id, HttpStatus.NOT_FOUND));
+        return teacherConverter.toDTO(teacher);
+
     }
 
-    public Teacher createTeacher(Teacher teacher){
-        return teacherRepository.save(teacher);
+    public TeacherDTO createTeacher(Teacher teacher){
+        return teacherConverter.toDTO(teacherRepository.save(teacher));
     }
 
     public void deleteTeacher(String id){
          teacherRepository.deleteById(id);
     }
 
-    public Teacher findTeacherByPesel(String pesel){
-             return teacherRepository.findTeacherByPesel(pesel)
+    public TeacherDTO findTeacherByPesel(String pesel){
+            Teacher teacher =  teacherRepository.findTeacherByPesel(pesel)
                      .orElseThrow(() -> new TeacherRequestException("No teacher under the pesle of: "+ pesel, HttpStatus.NOT_FOUND));
+            return teacherConverter.toDTO(teacher);
     }
 
 }

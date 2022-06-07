@@ -1,6 +1,7 @@
 package com.krukowska.controller;
 
 import com.krukowska.domain.Teacher;
+import com.krukowska.model.TeacherDTO;
 import com.krukowska.service.ITeacherService;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -14,17 +15,17 @@ public class TeacherController {
         this.iteacherService = iteacherService;
     }
     @GetMapping
-    public List<Teacher> getAllTeachers() {
+    public List<TeacherDTO> getAllTeachers() {
         return iteacherService.findAll();
     }
 
     @GetMapping("/getByID/{id}")
-    public Teacher getTeacherById(@PathVariable String id) {
+    public TeacherDTO getTeacherById(@PathVariable String id) {
         return iteacherService.getTeacherById(id);
     }
 
     @PostMapping("/create")
-    public Teacher createTeacher(@RequestBody Teacher teacher){
+    public TeacherDTO createTeacher(@RequestBody Teacher teacher){
         return iteacherService.createTeacher(teacher);
     }
 
@@ -34,7 +35,7 @@ public class TeacherController {
     }
 
     @GetMapping("/findByPesel/{pesel}")
-    public Teacher findTeacherByPesel(@PathVariable String pesel){
+    public TeacherDTO findTeacherByPesel(@PathVariable String pesel){
         return iteacherService.findTeacherByPesel(pesel);
     }
 }

@@ -24,10 +24,10 @@ public class StudentService implements IStudentService {
 
     public List<StudentDTO> findAll() {
         List<Student> students = studentRepository.findAll();
-        List<StudentDTO> studentsDTO = students.stream().map(studentConverter::toDTO).collect(Collectors.toList());
-        return  studentsDTO;
-        //return studentRepository.findAll();
-    };
+        return students.stream()
+                .map(studentConverter::toDTO)
+                .collect(Collectors.toList());
+    }
 
     public StudentDTO findStudentById(String id) {
           Student student = studentRepository.findById(id)
