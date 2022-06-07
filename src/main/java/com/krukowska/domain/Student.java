@@ -3,16 +3,13 @@ package com.krukowska.domain;
 import com.krukowska.domain.enums.ClassGroup;
 import com.krukowska.domain.enums.Gender;
 import com.krukowska.domain.enums.Subject;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
 
 @Getter
 @Setter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity(name = "Students")
@@ -45,7 +42,7 @@ public class Student {
     @Enumerated(EnumType.STRING)
     private ClassGroup classGroup;
 
-    @Column(name = "pesel", nullable = false)
+    @Column(name = "pesel", nullable = false, unique = true)
     private String pesel;
 
 }

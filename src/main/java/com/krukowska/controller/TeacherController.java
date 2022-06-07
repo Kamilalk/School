@@ -21,7 +21,6 @@ public class TeacherController {
     @GetMapping("/getByID/{id}")
     public Teacher getTeacherById(@PathVariable String id) {
         return iteacherService.getTeacherById(id);
-
     }
 
     @PostMapping("/create")

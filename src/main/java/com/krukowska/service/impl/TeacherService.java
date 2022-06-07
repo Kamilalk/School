@@ -1,5 +1,6 @@
 package com.krukowska.service.impl;
 
+import com.krukowska.converter.StudentConverter;
 import com.krukowska.domain.Teacher;
 import com.krukowska.exception.TeacherRequestException;
 import com.krukowska.repository.TeacherRepository;
@@ -11,9 +12,11 @@ import java.util.List;
 
 @Service
 public class TeacherService implements ITeacherService {
+
     private final TeacherRepository teacherRepository;
 
-    public TeacherService( TeacherRepository teacherRepository) {
+
+    public TeacherService(TeacherRepository teacherRepository) {
         this.teacherRepository = teacherRepository;
     }
 
@@ -35,7 +38,8 @@ public class TeacherService implements ITeacherService {
     }
 
     public Teacher findTeacherByPesel(String pesel){
-        return teacherRepository.findTeacherByPesel(pesel);
+             return teacherRepository.findTeacherByPesel(pesel)
+                     .orElseThrow(() -> new TeacherRequestException("No teacher under the pesle of: "+ pesel, HttpStatus.NOT_FOUND));
     }
 
 }

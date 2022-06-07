@@ -8,3 +8,5 @@ CREATE TABLE if NOT EXISTS teachers (
     subject        VARCHAR(25)  NOT NULL
 );
 
+ALTER TABLE teachers
+ADD COLUMN pesel VARCHAR(11) 

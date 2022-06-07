@@ -1,13 +1,12 @@
 package com.krukowska.service;
+import com.krukowska.model.StudentDTO;
 
-import com.krukowska.domain.Student;
 import java.util.List;
 
 public interface IStudentService {
-
-    List<Student> findAll();
-    Student findStudentById(String id);
-    Student createStudent(Student student);
+    List<StudentDTO> findAll();
+    StudentDTO findStudentById(String id);
+    StudentDTO createStudent(StudentDTO student);
     void deleteStudent(String id);
-    Student findStudentByPesel(String pesel);
+    StudentDTO findStudentByPesel(String pesel);
 }

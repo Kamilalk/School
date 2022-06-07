@@ -1,43 +1,52 @@
 package com.krukowska.service.impl;
 
+import com.krukowska.converter.StudentConverter;
 import com.krukowska.domain.Student;
 import com.krukowska.exception.StudentRequestException;
+import com.krukowska.model.StudentDTO;
 import com.krukowska.repository.StudentRepository;
 import com.krukowska.service.IStudentService;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
-import java.sql.*;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class StudentService implements IStudentService {
     private final StudentRepository studentRepository ;
+    private final StudentConverter studentConverter;
 
-    public StudentService(StudentRepository studentRepository) {
+    public StudentService(StudentRepository studentRepository, StudentConverter studentConverter) {
         this.studentRepository = studentRepository;
+        this.studentConverter = studentConverter;
     }
 
-
-    public List<Student> findAll() {
-        return studentRepository.findAll();
+    public List<StudentDTO> findAll() {
+        List<Student> students = studentRepository.findAll();
+        List<StudentDTO> studentsDTO = students.stream().map(studentConverter::toDTO).collect(Collectors.toList());
+        return  studentsDTO;
+        //return studentRepository.findAll();
     };
 
-
-    public Student findStudentById(String id) {
-        return studentRepository.findById(id)
-                .orElseThrow(() -> new StudentRequestException("No Student under the id : " + id, HttpStatus.NOT_FOUND));
+    public StudentDTO findStudentById(String id) {
+          Student student = studentRepository.findById(id)
+                 .orElseThrow(() -> new StudentRequestException("No Student under the id : " + id, HttpStatus.NOT_FOUND));
+          return studentConverter.toDTO(student);
     }
 
-    public Student createStudent(Student student){
-        return studentRepository.save(student);
+    public StudentDTO createStudent(StudentDTO studentDTO) {
+        Student studentEntity = studentRepository.save(studentConverter.toEntity(studentDTO));
+        return studentConverter.toDTO(studentEntity);
     }
 
     public void deleteStudent(String id) {
         studentRepository.deleteById(id);
     }
 
-    public Student findStudentByPesel(String pesel){
-        return studentRepository.findStudentByPesel(pesel);
+    public StudentDTO findStudentByPesel(String pesel){
+        Student student  = studentRepository.findStudentByPesel(pesel)
+                .orElseThrow(() -> new StudentRequestException("No Student under the Pesel : " + pesel, HttpStatus.NOT_FOUND));
+        return studentConverter.toDTO(student);
     }
 }

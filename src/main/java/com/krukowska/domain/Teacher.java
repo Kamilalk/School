@@ -7,8 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
+import java.util.Objects;
 
 @Setter
 @Getter
@@ -39,7 +39,7 @@ public class Teacher {
     @Enumerated(EnumType.STRING)
     private Subject subject;
 
-    @Column(name = "pesel", nullable = false)
+    @Column(name = "pesel", nullable = false, unique = true)
     private String pesel;
 
     @Override
@@ -49,7 +49,7 @@ public class Teacher {
 
         Teacher teacher = (Teacher) o;
 
-        return id != null ? id.equals(teacher.id) : teacher.id == null;
+        return Objects.equals(id, teacher.id);
     }
 
     @Override

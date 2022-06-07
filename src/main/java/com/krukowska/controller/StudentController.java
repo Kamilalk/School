@@ -1,9 +1,9 @@
 package com.krukowska.controller;
 
 import com.krukowska.domain.Student;
+import com.krukowska.model.StudentDTO;
 import com.krukowska.service.IStudentService;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -17,17 +17,17 @@ public class StudentController {
     }
 
     @GetMapping
-    public List<Student> findAllStudents(){
+    public List<StudentDTO> findAllStudents(){
         return iStudentService.findAll();
     }
 
     @GetMapping("/findByID/{id}")
-    public Student getStudentById(@PathVariable String id){
+    public StudentDTO getStudentById(@PathVariable String id){
         return iStudentService.findStudentById(id);
     }
 
     @PostMapping("/create")
-    public Student createStudent(@RequestBody Student student){
+    public StudentDTO createStudent(@RequestBody StudentDTO student){
         return iStudentService.createStudent(student);
     }
 
@@ -37,7 +37,7 @@ public class StudentController {
     }
 
     @GetMapping("/findByPesel/{pesel}")
-    public Student findStudentByPesel(@PathVariable String pesel){
+    public StudentDTO findStudentByPesel(@PathVariable String pesel){
         return iStudentService.findStudentByPesel(pesel);
     }
 
