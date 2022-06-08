@@ -45,4 +45,7 @@ public class Student {
     @Column(name = "pesel", nullable = false, unique = true)
     private String pesel;
 
+    @Column(name = "dob", nullable = false)
+    private String dob;
+
 }

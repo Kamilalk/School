@@ -28,15 +28,14 @@ public class TeacherService implements ITeacherService {
     }
 
     public TeacherDTO getTeacherById(String id){
-
          Teacher teacher =  teacherRepository.findById(id)
                  .orElseThrow(() -> new TeacherRequestException("No Teacher under the id : " + id, HttpStatus.NOT_FOUND));
         return teacherConverter.toDTO(teacher);
-
     }
 
-    public TeacherDTO createTeacher(Teacher teacher){
-        return teacherConverter.toDTO(teacherRepository.save(teacher));
+    public TeacherDTO createTeacher(TeacherDTO teacher){
+        Teacher teacherEntity = teacherRepository.save(teacherConverter.toEntity(teacher));
+        return teacherConverter.toDTO(teacherEntity);
     }
 
     public void deleteTeacher(String id){

@@ -1,6 +1,6 @@
 package com.krukowska.controller;
 
-import com.krukowska.domain.Student;
+import com.krukowska.model.CreateStudentRequest;
 import com.krukowska.model.StudentDTO;
 import com.krukowska.service.IStudentService;
 import org.springframework.web.bind.annotation.*;
@@ -39,6 +39,10 @@ public class StudentController {
     @GetMapping("/findByPesel/{pesel}")
     public StudentDTO findStudentByPesel(@PathVariable String pesel){
         return iStudentService.findStudentByPesel(pesel);
+    }
+    @PostMapping("/autofillByPesel") // or @put mapping if its update
+    public CreateStudentRequest autoFillByPesel(@RequestBody CreateStudentRequest createStudentRequest){
+        return iStudentService.autofillByPesel(createStudentRequest);
     }
 
 }

@@ -1,6 +1,5 @@
 package com.krukowska.controller;
 
-import com.krukowska.domain.Teacher;
 import com.krukowska.model.TeacherDTO;
 import com.krukowska.service.ITeacherService;
 import org.springframework.web.bind.annotation.*;
@@ -25,7 +24,7 @@ public class TeacherController {
     }
 
     @PostMapping("/create")
-    public TeacherDTO createTeacher(@RequestBody Teacher teacher){
+    public TeacherDTO createTeacher(@RequestBody TeacherDTO teacher){
         return iteacherService.createTeacher(teacher);
     }
 

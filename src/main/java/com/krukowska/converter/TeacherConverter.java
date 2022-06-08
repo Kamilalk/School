@@ -3,7 +3,6 @@ package com.krukowska.converter;
 import com.krukowska.domain.Teacher;
 import com.krukowska.model.TeacherDTO;
 import org.springframework.stereotype.Component;
-
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -20,7 +19,6 @@ public class TeacherConverter {
                 .subject(teacher.getSubject())
                 .pesel(teacher.getPesel())
                 .build();
-
     }
 
     public Teacher toEntity(TeacherDTO teacherDTO){
