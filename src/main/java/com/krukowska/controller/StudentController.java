@@ -27,7 +27,7 @@ public class StudentController {
     }
 
     @PostMapping("/create")
-    public StudentDTO createStudent(@RequestBody StudentDTO student){
+    public StudentDTO createStudent(@RequestBody CreateStudentRequest student){
         return iStudentService.createStudent(student);
     }
 
@@ -40,9 +40,10 @@ public class StudentController {
     public StudentDTO findStudentByPesel(@PathVariable String pesel){
         return iStudentService.findStudentByPesel(pesel);
     }
-    @PostMapping("/autofillByPesel") // or @put mapping if its update
-    public CreateStudentRequest autoFillByPesel(@RequestBody CreateStudentRequest createStudentRequest){
-        return iStudentService.autofillByPesel(createStudentRequest);
+
+    @GetMapping("/findByAgeNGender")
+    public List<StudentDTO> findByAgeNGender(){
+        return
     }
 
 }

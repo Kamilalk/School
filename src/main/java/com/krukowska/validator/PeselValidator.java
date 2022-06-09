@@ -2,15 +2,31 @@ package com.krukowska.validator;
 import com.krukowska.domain.enums.Gender;
 import java.time.LocalDate;
 public class PeselValidator {
+    private PeselValidator() {
+    }
 
-    public int getBirthYear(String pesel) {
-        byte[] valPesel = pesel.getBytes();
+    public static LocalDate getBirthDate(final String pesel) {
+        byte[] PESEL = new byte[11];
+
+        for (int i = 0; i < 11; i++){
+            PESEL[i] = Byte.parseByte(pesel.substring(i, i+1));
+        }
+
+        int day = getBirthDay(PESEL);
+        int month = getBirthMonth(PESEL);
+        int year = getBirthYear(PESEL);
+
+        return LocalDate.of(year,month,day);
+
+    }
+
+    private static int getBirthYear(final byte[] PESEL) {
         int year;
         int month;
-        year = 10 * valPesel[0];
-        year += valPesel[1];
-        month = 10 * valPesel[2];
-        month += valPesel[3];
+        year = 10 * PESEL[0];
+        year += PESEL[1];
+        month = 10 * PESEL[2];
+        month += PESEL[3];
         if (month > 80 && month < 93) {
             year += 1800;
         }
@@ -29,11 +45,10 @@ public class PeselValidator {
         return year;
     }
 
-    public int getBirthMonth(String pesel) {
-        byte[] valPesel = pesel.getBytes();
+    private static int getBirthMonth(final byte[] PESEL) {
         int month;
-        month = 10 * valPesel[2];
-        month += valPesel[3];
+        month = 10 * PESEL[2];
+        month += PESEL[3];
         if (month > 80 && month < 93) {
             month -= 80;
         }
@@ -49,30 +64,38 @@ public class PeselValidator {
         return month;
     }
 
-    public int getBirthDay(String pesel) {
-        byte[] valPesel = pesel.getBytes();
+    private static int getBirthDay(final byte[] PESEL) {
         int day;
-        day = 10 * valPesel[4];
-        day += valPesel[5];
+        day = 10 * PESEL[4];
+        day += PESEL[5];
         return day;
     }
 
-    public String getBirthDate(String pesel){
-        int day = getBirthDay(pesel);
-        int month = getBirthMonth(pesel);
-        int year = getBirthYear(pesel);
-        return "" + day + "/" +  month + "/" + year;
+    public static Gender getSex(String pesel) {
+        byte[] valPesel = pesel.getBytes();
+        if (valPesel[9] % 2 == 1) {
+            return Gender.MALE;
+        }
+        else {
+            return Gender.FEMALE;
+        }
+
     }
 
-    public int getAge(String pesel){
+    public static int getAge(String pesel){
+        byte[] PESEL = new byte[11];
+
+        for (int i = 0; i < 11; i++){
+            PESEL[i] = Byte.parseByte(pesel.substring(i, i+1));
+        }
         LocalDate currentDate = LocalDate.now();
         int currentDay = currentDate.getDayOfMonth();
         int currentMonth = currentDate.getMonthValue();
         int currentYear = currentDate.getYear();
 
-        int birthDay = getBirthDay(pesel);
-        int birthMonth = getBirthMonth(pesel);
-        int birthYear = getBirthYear(pesel);
+        int birthDay = getBirthDay(PESEL);
+        int birthMonth = getBirthMonth(PESEL);
+        int birthYear = getBirthYear(PESEL);
 
         int age = currentYear - birthYear;
 
@@ -86,18 +109,6 @@ public class PeselValidator {
         }
         return age;
     }
-
-    public Gender getSex(String pesel) {
-        byte[] valPesel = pesel.getBytes();
-        if (valPesel[9] % 2 == 1) {
-            return Gender.MALE;
-        }
-        else {
-            return Gender.FEMALE;
-        }
-
-    }
-
 
 
 }

@@ -10,8 +10,7 @@ import java.util.Optional;
 public interface StudentRepository extends JpaRepository<Student, String>{
         @Query("SELECT s FROM Students s WHERE s.pesel like ?1")
         Optional<Student> findStudentByPesel(String pesel);
-        @Query("INSERT INTO Students (first_Name, last_Name, pesel, age, dob, gender) VALUES( first_Name, last_Name, pesel, age, dob, gender)")
-        Student autoFillByPesel(Student student);
+
 }
 
 

@@ -5,6 +5,8 @@ import com.krukowska.domain.enums.Gender;
 import com.krukowska.domain.enums.Subject;
 import lombok.*;
 
+import javax.persistence.Entity;
+
 @Getter
 @Setter
 @Builder

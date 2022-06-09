@@ -5,22 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92ba5243-8668-4380-8065-86cf725dd0c4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/converter/CSRConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/model/CreateStudentRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/validator/PeselValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/model/GenderNAgeRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/TeacherApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/TeacherApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/controller/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/controller/StudentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/controller/TeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/controller/TeacherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/converter/CSRConverter.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/converter/StudentConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/converter/StudentConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/converter/TeacherConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/converter/TeacherConverter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/domain/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/domain/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/model/CreateStudentRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/model/CreateStudentRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/model/StudentDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/model/StudentDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/repository/StudentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/repository/StudentRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/service/IStudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/service/IStudentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/service/ITeacherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/service/ITeacherService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/service/impl/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/service/impl/StudentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/service/impl/TeacherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/service/impl/TeacherService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/validator/PeselValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/validator/PeselValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/scripts/create_student_table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/scripts/create_student_table.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/krukowska/TeacherApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/krukowska/TeacherApplication.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,12 +153,22 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>jar://$PROJECT_DIR$/../../../../../Program Files/Java/jdk-17.0.3/lib/src.zip!/java.base/java/lang/Object.java</url>
           <line>162</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
-        <breakpoint enabled="true" type="java-exception">
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/krukowska/domain/Student.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/krukowska/domain/Student.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <breakpoint type="java-exception">
           <properties class="antlr.NoViableAltException" package="antlr" />
           <option name="timeStamp" value="5" />
         </breakpoint>

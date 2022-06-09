@@ -1,6 +1,5 @@
 package com.krukowska.service.impl;
 
-import com.krukowska.converter.CSRConverter;
 import com.krukowska.converter.StudentConverter;
 import com.krukowska.domain.Student;
 import com.krukowska.exception.StudentRequestException;
@@ -8,7 +7,6 @@ import com.krukowska.model.CreateStudentRequest;
 import com.krukowska.model.StudentDTO;
 import com.krukowska.repository.StudentRepository;
 import com.krukowska.service.IStudentService;
-import com.krukowska.validator.PeselValidator;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
@@ -19,14 +17,10 @@ import java.util.stream.Collectors;
 public class StudentService implements IStudentService {
     private final StudentRepository studentRepository ;
     private final StudentConverter studentConverter;
-    private final PeselValidator peselValidator;
-    private final CSRConverter csrConverter;
 
-    public StudentService(StudentRepository studentRepository, StudentConverter studentConverter, PeselValidator peselValidator, CSRConverter csrConverter) {
+    public StudentService(StudentRepository studentRepository, StudentConverter studentConverter) {
         this.studentRepository = studentRepository;
         this.studentConverter = studentConverter;
-        this.peselValidator = peselValidator;
-        this.csrConverter = csrConverter;
     }
 
     public List<StudentDTO> findAll() {
@@ -42,9 +36,14 @@ public class StudentService implements IStudentService {
           return studentConverter.toDTO(student);
     }
 
-    public StudentDTO createStudent(StudentDTO studentDTO) {
-        Student studentEntity = studentRepository.save(studentConverter.toEntity(studentDTO));
-        return studentConverter.toDTO(studentEntity);
+    public StudentDTO createStudent(CreateStudentRequest createStudentRequest) {
+        Student student = new Student(
+                createStudentRequest.getFirstName(),
+                createStudentRequest.getLastName(),
+                createStudentRequest.getPesel(),
+                createStudentRequest.getSubject(),
+                createStudentRequest.getClassGroup());
+        return studentConverter.toDTO(studentRepository.save(student));
     }
 
     public void deleteStudent(String id) {
@@ -57,12 +56,4 @@ public class StudentService implements IStudentService {
         return studentConverter.toDTO(student);
     }
 
-    public CreateStudentRequest autofillByPesel(CreateStudentRequest createStudentRequest){
-        Student student = studentRepository.save(csrConverter.toEntity(createStudentRequest));
-        student.setGender(peselValidator.getSex(student.getPesel()));
-        student.setDob(peselValidator.getBirthDate(student.getPesel()));
-        student.setAge(peselValidator.getAge(student.getPesel()));
-        studentRepository.autoFillByPesel(student);
-        return csrConverter.toDTO(student);
-    }
 }

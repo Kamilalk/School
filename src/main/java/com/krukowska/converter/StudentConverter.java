@@ -1,6 +1,7 @@
 package com.krukowska.converter;
 
 import com.krukowska.domain.Student;
+import com.krukowska.model.CreateStudentRequest;
 import com.krukowska.model.StudentDTO;
 import org.springframework.stereotype.Component;
 
@@ -31,4 +32,5 @@ public class StudentConverter {
                 .pesel(studentDTO.getPesel())
                 .build();
     }
+
 }

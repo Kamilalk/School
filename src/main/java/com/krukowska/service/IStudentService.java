@@ -1,5 +1,5 @@
 package com.krukowska.service;
-import com.krukowska.domain.Student;
+import com.krukowska.domain.enums.Gender;
 import com.krukowska.model.CreateStudentRequest;
 import com.krukowska.model.StudentDTO;
 
@@ -8,8 +8,9 @@ import java.util.List;
 public interface IStudentService {
     List<StudentDTO> findAll();
     StudentDTO findStudentById(String id);
-    StudentDTO createStudent(StudentDTO student);
+    StudentDTO createStudent(CreateStudentRequest student);
     void deleteStudent(String id);
     StudentDTO findStudentByPesel(String pesel);
-    CreateStudentRequest autofillByPesel(CreateStudentRequest createStudentRequest);
+    StudentDTO findByAgeNGender(Gender gender,int age);
+
 }
