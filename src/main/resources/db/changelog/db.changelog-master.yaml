@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - include:
+      file: classpath:db/changelog/schema/create-student.sql
+  - include:
+      file: classpath:db/changelog/schema/create-teacher.sql
+  - include:
+      file: classpath:db/changelog/schema/update-teacher.sql

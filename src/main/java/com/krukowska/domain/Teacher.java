@@ -2,9 +2,11 @@ package com.krukowska.domain;
 
 import com.krukowska.domain.enums.Gender;
 import com.krukowska.domain.enums.Subject;
+import com.krukowska.validator.PeselValidator;
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Objects;
 
 @Setter
@@ -39,6 +41,19 @@ public class Teacher {
 
     @Column(name = "pesel", nullable = false, unique = true)
     private String pesel;
+
+    @Column(name = "dob", nullable = false)
+    private LocalDate dob;
+
+    public Teacher(String firstName, String lastName, Subject subject, String pesel) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = PeselValidator.getAge(pesel);
+        this.gender = PeselValidator.getSex(pesel);
+        this.subject = subject;
+        this.pesel = pesel;
+        this.dob = PeselValidator.getBirthDate(pesel);
+    }
 
     @Override
     public boolean equals(Object o) {
