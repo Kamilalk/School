@@ -2,6 +2,7 @@ package com.krukowska.service.impl;
 
 import com.krukowska.converter.StudentConverter;
 import com.krukowska.domain.Student;
+import com.krukowska.domain.enums.Gender;
 import com.krukowska.exception.StudentRequestException;
 import com.krukowska.model.CreateStudentRequest;
 import com.krukowska.model.StudentDTO;
@@ -55,5 +56,14 @@ public class StudentService implements IStudentService {
                 .orElseThrow(() -> new StudentRequestException("No Student under the Pesel : " + pesel, HttpStatus.NOT_FOUND));
         return studentConverter.toDTO(student);
     }
+
+    @Override
+    public List<StudentDTO> findByAgeNGender(Gender gender, int age) {
+        List<Student> students = studentRepository.findByAgeNGender(gender, age);
+        if(students.isEmpty()) throw new StudentRequestException("No " + gender + " students, that are " + age + " years old.", HttpStatus.NOT_FOUND);
+        else
+            return students.stream().map(studentConverter::toDTO).collect(Collectors.toList());
+    }
+
 
 }

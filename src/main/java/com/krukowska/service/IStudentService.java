@@ -11,6 +11,6 @@ public interface IStudentService {
     StudentDTO createStudent(CreateStudentRequest student);
     void deleteStudent(String id);
     StudentDTO findStudentByPesel(String pesel);
-    StudentDTO findByAgeNGender(Gender gender,int age);
+    List<StudentDTO> findByAgeNGender(Gender gender, int age);
 
 }

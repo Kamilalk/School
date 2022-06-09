@@ -1,5 +1,6 @@
 package com.krukowska.controller;
 
+import com.krukowska.domain.enums.Gender;
 import com.krukowska.model.CreateStudentRequest;
 import com.krukowska.model.StudentDTO;
 import com.krukowska.service.IStudentService;
@@ -42,8 +43,8 @@ public class StudentController {
     }
 
     @GetMapping("/findByAgeNGender")
-    public List<StudentDTO> findByAgeNGender(){
-        return
+    public List<StudentDTO> findByAgeNGender(@RequestParam Gender gender, int age ){
+        return iStudentService.findByAgeNGender(gender, age);
     }
 
 }
