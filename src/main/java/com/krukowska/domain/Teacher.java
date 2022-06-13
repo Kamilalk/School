@@ -7,7 +7,9 @@ import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 @Setter
 @Getter
@@ -45,7 +47,10 @@ public class Teacher {
     @Column(name = "dob", nullable = false)
     private LocalDate dob;
 
-    public Teacher(String firstName, String lastName, Subject subject, String pesel) {
+    @ManyToMany(targetEntity = Class.class)
+    private Set<Class> clas;
+
+    public Teacher(String firstName, String lastName, Subject subject, String pesel){
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = PeselValidator.getAge(pesel);
@@ -55,18 +60,4 @@ public class Teacher {
         this.dob = PeselValidator.getBirthDate(pesel);
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Teacher teacher = (Teacher) o;
-
-        return Objects.equals(id, teacher.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return id != null ? id.hashCode() : 0;
-    }
 }

@@ -1,11 +1,9 @@
 package com.krukowska.model;
 
-import com.krukowska.domain.enums.ClassGroup;
+import com.krukowska.domain.enums.Year;
 import com.krukowska.domain.enums.Gender;
 import com.krukowska.domain.enums.Subject;
 import lombok.*;
-
-import javax.persistence.Entity;
 
 @Getter
 @Setter
@@ -19,6 +17,6 @@ public class StudentDTO {
     private Integer age;
     private Gender gender;
     private Subject subject;
-    private ClassGroup classGroup;
+    private Year classGroup;
     private String pesel;
 }

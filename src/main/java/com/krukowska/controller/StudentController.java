@@ -1,7 +1,7 @@
 package com.krukowska.controller;
 
 import com.krukowska.domain.enums.Gender;
-import com.krukowska.model.CreateStudentRequest;
+import com.krukowska.model.StudentRequest;
 import com.krukowska.model.StudentDTO;
 import com.krukowska.service.IStudentService;
 import org.springframework.web.bind.annotation.*;
@@ -28,7 +28,7 @@ public class StudentController {
     }
 
     @PostMapping("/create")
-    public StudentDTO createStudent(@RequestBody CreateStudentRequest student){
+    public StudentDTO createStudent(@RequestBody StudentRequest student){
         return iStudentService.createStudent(student);
     }
 

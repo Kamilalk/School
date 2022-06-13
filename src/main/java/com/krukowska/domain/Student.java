@@ -1,6 +1,6 @@
 package com.krukowska.domain;
 
-import com.krukowska.domain.enums.ClassGroup;
+import com.krukowska.domain.enums.Year;
 import com.krukowska.domain.enums.Gender;
 import com.krukowska.domain.enums.Subject;
 import com.krukowska.validator.PeselValidator;
@@ -43,7 +43,7 @@ public class Student {
 
     @Column(name = "class_group", nullable = false)
     @Enumerated(EnumType.STRING)
-    private ClassGroup classGroup;
+    private Year year;
 
     @Column(name = "pesel", nullable = false, unique = true)
     private String pesel;
@@ -57,7 +57,7 @@ public class Student {
         this.age = PeselValidator.getAge(pesel);
         this.gender = PeselValidator.getSex(pesel);
         this.subject = Subject.valueOf(subject);
-        this.classGroup = ClassGroup.valueOf(classGroup);
+        this.year = Year.valueOf(classGroup);
         this.pesel = pesel;
         this.dob = PeselValidator.getBirthDate(pesel);
     }

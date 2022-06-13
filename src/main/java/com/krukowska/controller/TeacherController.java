@@ -1,6 +1,8 @@
 package com.krukowska.controller;
 
+import com.krukowska.domain.enums.Gender;
 import com.krukowska.model.TeacherDTO;
+import com.krukowska.model.TeacherRequest;
 import com.krukowska.service.ITeacherService;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -24,7 +26,7 @@ public class TeacherController {
     }
 
     @PostMapping("/create")
-    public TeacherDTO createTeacher(@RequestBody TeacherDTO teacher){
+    public TeacherDTO createTeacher(@RequestBody TeacherRequest teacher){
         return iteacherService.createTeacher(teacher);
     }
 
@@ -36,6 +38,11 @@ public class TeacherController {
     @GetMapping("/findByPesel/{pesel}")
     public TeacherDTO findTeacherByPesel(@PathVariable String pesel){
         return iteacherService.findTeacherByPesel(pesel);
+    }
+
+    @GetMapping("/findByAgeNGender")
+    public List<TeacherDTO> findByAgeNGender(@RequestParam Gender gender, int age){
+        return iteacherService.findByAgeNGender(gender, age);
     }
 }
 

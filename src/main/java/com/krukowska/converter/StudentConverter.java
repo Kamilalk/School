@@ -1,7 +1,6 @@
 package com.krukowska.converter;
 
 import com.krukowska.domain.Student;
-import com.krukowska.model.CreateStudentRequest;
 import com.krukowska.model.StudentDTO;
 import org.springframework.stereotype.Component;
 
@@ -16,7 +15,7 @@ public class StudentConverter {
                 .age(student.getAge())
                 .gender(student.getGender())
                 .subject(student.getSubject())
-                .classGroup(student.getClassGroup())
+                .classGroup(student.getYear())
                 .pesel(student.getPesel())
                 .build();
     }
@@ -28,7 +27,7 @@ public class StudentConverter {
                 .age(studentDTO.getAge())
                 .gender(studentDTO.getGender())
                 .subject(studentDTO.getSubject())
-                .classGroup(studentDTO.getClassGroup())
+                .year(studentDTO.getClassGroup())
                 .pesel(studentDTO.getPesel())
                 .build();
     }

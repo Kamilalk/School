@@ -1,13 +1,12 @@
 package com.krukowska.model;
+import com.krukowska.domain.enums.Subject;
 import lombok.*;
-
-import javax.persistence.Entity;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class CreateStudentRequest  {
+public class StudentRequest {
     private String firstName;
     private String lastName;
     private String pesel;

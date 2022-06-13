@@ -1,6 +1,6 @@
 package com.krukowska.domain.enums;
 
-public enum ClassGroup {
+public enum Year {
     FIRST_YEAR,
     SECOND_YEAR,
     THIRD_YEAR,

@@ -4,7 +4,7 @@ import com.krukowska.converter.StudentConverter;
 import com.krukowska.domain.Student;
 import com.krukowska.domain.enums.Gender;
 import com.krukowska.exception.StudentRequestException;
-import com.krukowska.model.CreateStudentRequest;
+import com.krukowska.model.StudentRequest;
 import com.krukowska.model.StudentDTO;
 import com.krukowska.repository.StudentRepository;
 import com.krukowska.service.IStudentService;
@@ -37,7 +37,7 @@ public class StudentService implements IStudentService {
           return studentConverter.toDTO(student);
     }
 
-    public StudentDTO createStudent(CreateStudentRequest createStudentRequest) {
+    public StudentDTO createStudent(StudentRequest createStudentRequest) {
         Student student = new Student(
                 createStudentRequest.getFirstName(),
                 createStudentRequest.getLastName(),
