@@ -5,27 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92ba5243-8668-4380-8065-86cf725dd0c4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/controller/ClassController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/domain/Class.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/model/TeacherRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/repository/ClassRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/service/IClassService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/service/impl/ClassService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/schema/create-class.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/controller/ClasController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/converter/ClasConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/exception/ClasException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/exception/ClasExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/exception/ClasRequestException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/model/ClasDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/model/CreateClasRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/schema/4-create-clas.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/schema/5_teacher_clas_map.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/schema/6-update-student.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/schema/7-update-clas.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/controller/ClassController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/controller/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/controller/StudentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/controller/TeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/controller/TeacherController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/converter/StudentConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/converter/StudentConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/domain/Class.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/domain/Clas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/domain/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/domain/Student.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/domain/Teacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/domain/Teacher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/domain/enums/ClassGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/domain/enums/Year.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/model/CreateStudentRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/model/StudentRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/model/StudentDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/model/StudentDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/repository/TeacherRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/repository/TeacherRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/service/IStudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/service/IStudentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/service/ITeacherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/service/ITeacherService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/service/impl/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/service/impl/StudentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/service/impl/TeacherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/service/impl/TeacherService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/repository/ClassRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/repository/ClasRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/service/IClassService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/service/IClasService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/krukowska/service/impl/ClassService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/krukowska/service/impl/ClasService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/db.changelog-master.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/db.changelog-master.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/schema/create-class.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/schema/create-student.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/schema/1-create-student.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/schema/create-teacher.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/schema/2-create-teacher.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/schema/update-teacher.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/schema/3-update-teacher.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +75,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/03KLK/Desktop/projects/School&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/03KLK/Desktop/projects/sf-di/sf-di&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
   }

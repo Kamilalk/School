@@ -7,8 +7,6 @@ import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.HashSet;
-import java.util.Objects;
 import java.util.Set;
 
 @Setter
@@ -46,9 +44,6 @@ public class Teacher {
 
     @Column(name = "dob", nullable = false)
     private LocalDate dob;
-
-    @ManyToMany(targetEntity = Class.class)
-    private Set<Class> clas;
 
     public Teacher(String firstName, String lastName, Subject subject, String pesel){
         this.firstName = firstName;

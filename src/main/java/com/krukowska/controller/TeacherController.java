@@ -19,27 +19,22 @@ public class TeacherController {
     public List<TeacherDTO> getAllTeachers() {
         return iteacherService.findAll();
     }
-
     @GetMapping("/getByID/{id}")
     public TeacherDTO getTeacherById(@PathVariable String id) {
         return iteacherService.getTeacherById(id);
     }
-
     @PostMapping("/create")
     public TeacherDTO createTeacher(@RequestBody TeacherRequest teacher){
         return iteacherService.createTeacher(teacher);
     }
-
     @DeleteMapping ("deleteByID/{id}")
     public void deleteTeacher(@PathVariable String id){
          iteacherService.deleteTeacher(id);
     }
-
     @GetMapping("/findByPesel/{pesel}")
     public TeacherDTO findTeacherByPesel(@PathVariable String pesel){
         return iteacherService.findTeacherByPesel(pesel);
     }
-
     @GetMapping("/findByAgeNGender")
     public List<TeacherDTO> findByAgeNGender(@RequestParam Gender gender, int age){
         return iteacherService.findByAgeNGender(gender, age);

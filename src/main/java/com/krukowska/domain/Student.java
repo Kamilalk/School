@@ -51,6 +51,14 @@ public class Student {
     @Column(name = "dob", nullable = false)
     private LocalDate dob;
 
+    @ManyToOne
+    @JoinColumn(
+            name = "clas_id",
+            referencedColumnName = "id",
+            nullable = false
+    )
+    private Clas clas;
+
     public Student(String firstName, String lastName, String pesel, String subject, String classGroup) {
         this.firstName = firstName;
         this.lastName = lastName;

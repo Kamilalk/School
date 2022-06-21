@@ -31,5 +31,4 @@ public class StudentConverter {
                 .pesel(studentDTO.getPesel())
                 .build();
     }
-
 }

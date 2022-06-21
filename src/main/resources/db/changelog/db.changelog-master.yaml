@@ -1,7 +1,15 @@
 databaseChangeLog:
   - include:
-      file: classpath:db/changelog/schema/create-student.sql
+      file: classpath:db/changelog/schema/1-create-student.sql
   - include:
-      file: classpath:db/changelog/schema/create-teacher.sql
+      file: classpath:db/changelog/schema/2-create-teacher.sql
   - include:
-      file: classpath:db/changelog/schema/update-teacher.sql
+      file: classpath:db/changelog/schema/3-update-teacher.sql
+  - include:
+      file: classpath:db/changelog/schema/4-create-clas.sql
+  - include:
+      file: classpath:db/changelog/schema/5_teacher_clas_map.sql
+  - include:
+      file: classpath:db/changelog/schema/6-update-student.sql
+  - include:
+      file: classpath:db/changelog/schema/7-update-clas.sql
