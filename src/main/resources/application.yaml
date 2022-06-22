@@ -14,3 +14,6 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQL95Dialect
         format_sql: true
     show-sql: true
+
+  liquibase:
+    changeLog: classpath:/db/changelog/db.changelog-master.yaml
