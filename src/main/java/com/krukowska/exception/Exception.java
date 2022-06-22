@@ -6,16 +6,14 @@ import org.springframework.http.HttpStatus;
 import java.time.ZonedDateTime;
 
 @Getter
-public class TeacherException {
+public class Exception {
     private final String message;
     private final HttpStatus status;
-    private final ZonedDateTime timestamp;
+    private final ZonedDateTime timeStamp;
 
-    public TeacherException(String message, HttpStatus status, ZonedDateTime timestamp) {
+    public Exception(String message, HttpStatus status, ZonedDateTime timeStamp) {
         this.message = message;
         this.status = status;
-        this.timestamp = timestamp;
+        this.timeStamp = timeStamp;
     }
 }
-
-

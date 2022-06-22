@@ -42,7 +42,7 @@ public class Clas {
     private Set<Teacher> teacher;
 
     @OneToMany(mappedBy = "clas")
-    private List<Student> students;
+    private Set<Student> students;
 
     public Clas(Subject subject, Year year, Set<Teacher> teacher) {
         this.subject = subject;

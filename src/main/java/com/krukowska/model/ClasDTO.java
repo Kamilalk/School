@@ -19,5 +19,5 @@ public class ClasDTO {
     private Subject subject;
     private Year year;
     private Set<Teacher> teacher;
-    private List<Student> students;
+    private Set<Student> students;
 }

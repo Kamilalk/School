@@ -3,7 +3,7 @@ package com.krukowska.service.impl;
 import com.krukowska.converter.ClasConverter;
 import com.krukowska.domain.Clas;
 import com.krukowska.domain.Teacher;
-import com.krukowska.exception.ClasRequestException;
+import com.krukowska.exception.RequestException;
 import com.krukowska.model.ClasDTO;
 import com.krukowska.model.CreateClasRequest;
 import com.krukowska.repository.ClasRepository;
@@ -31,8 +31,7 @@ public class ClasService implements IClasService {
         this.teacherRepository = teacherRepository;
     }
     public void createClas(CreateClasRequest clasRequest) {
-        List<Teacher> teacherList = teacherRepository.findAllById(clasRequest.getTeacherIds());
-        Set<Teacher> teacherSet = new HashSet<>(teacherList);
+        Set<Teacher> teacherSet = teacherRepository.findAllTeachersByIds(clasRequest.getTeacherIds());
         Clas clas = new Clas(
                clasRequest.getSubject(),
                clasRequest.getYear(),
@@ -64,7 +63,7 @@ public class ClasService implements IClasService {
    @Transactional
    public void addTeachers(List<String> teacherIds, String clasId){
         Clas clas = clasRepository.findById(clasId)
-                .orElseThrow(() -> new ClasRequestException("No class found by the id of: " + clasId, HttpStatus.NOT_FOUND));
+                .orElseThrow(() -> new RequestException("No class found by the id of: " + clasId, HttpStatus.NOT_FOUND));
         List<Teacher> newTeachers = teacherRepository.findAllById(teacherIds);
         Set<Teacher> teacher = clas.getTeacher();
         teacher.addAll(newTeachers);

@@ -3,7 +3,7 @@ package com.krukowska.service.impl;
 import com.krukowska.converter.StudentConverter;
 import com.krukowska.domain.Student;
 import com.krukowska.domain.enums.Gender;
-import com.krukowska.exception.StudentRequestException;
+import com.krukowska.exception.RequestException;
 import com.krukowska.model.StudentRequest;
 import com.krukowska.model.StudentDTO;
 import com.krukowska.repository.StudentRepository;
@@ -33,11 +33,12 @@ public class StudentService implements IStudentService {
 
     public StudentDTO findStudentById(String id) {
           Student student = studentRepository.findById(id)
-                 .orElseThrow(() -> new StudentRequestException("No Student under the id : " + id, HttpStatus.NOT_FOUND));
+                 .orElseThrow(() -> new RequestException("No Student under the id : " + id, HttpStatus.NOT_FOUND));
           return studentConverter.toDTO(student);
     }
 
     public StudentDTO createStudent(StudentRequest createStudentRequest) {
+
         Student student = new Student(
                 createStudentRequest.getFirstName(),
                 createStudentRequest.getLastName(),
@@ -53,14 +54,14 @@ public class StudentService implements IStudentService {
 
     public StudentDTO findStudentByPesel(String pesel){
         Student student  = studentRepository.findStudentByPesel(pesel)
-                .orElseThrow(() -> new StudentRequestException("No Student under the Pesel : " + pesel, HttpStatus.NOT_FOUND));
+                .orElseThrow(() -> new RequestException("No Student under the Pesel : " + pesel, HttpStatus.NOT_FOUND));
         return studentConverter.toDTO(student);
     }
 
     @Override
     public List<StudentDTO> findByAgeNGender(Gender gender, int age) {
         List<Student> students = studentRepository.findByAgeNGender(gender, age);
-        if(students.isEmpty()) throw new StudentRequestException("No " + gender + " students, that are " + age + " years old.", HttpStatus.NOT_FOUND);
+        if(students.isEmpty()) throw new RequestException("No " + gender + " students, that are " + age + " years old.", HttpStatus.NOT_FOUND);
         else
             return students.stream().map(studentConverter::toDTO).collect(Collectors.toList());
     }

@@ -2,10 +2,10 @@ package com.krukowska.exception;
 
 import org.springframework.http.HttpStatus;
 
-public class ClasRequestException extends RuntimeException {
+public class RequestException extends RuntimeException {
     private final HttpStatus status;
 
-    public ClasRequestException(String message, HttpStatus status) {
+    public RequestException(String message, HttpStatus status) {
         super(message);
         this.status = status;
     }

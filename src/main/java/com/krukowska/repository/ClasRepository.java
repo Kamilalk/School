@@ -18,4 +18,5 @@ public interface ClasRepository extends JpaRepository<Clas, String> {
     @Query(value = "INSERT INTO teacher_clas_map(teacher_id, clas_id) VALUES (:teacherId, :clasId)", nativeQuery = true)
     void addTeacher(@Param("teacherId") String teacherId, @Param("clasId")String clasId);
 
+
 }
