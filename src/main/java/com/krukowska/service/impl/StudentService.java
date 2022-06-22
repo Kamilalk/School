@@ -1,27 +1,32 @@
 package com.krukowska.service.impl;
 
 import com.krukowska.converter.StudentConverter;
+import com.krukowska.domain.Clas;
 import com.krukowska.domain.Student;
 import com.krukowska.domain.enums.Gender;
 import com.krukowska.exception.RequestException;
 import com.krukowska.model.StudentRequest;
 import com.krukowska.model.StudentDTO;
+import com.krukowska.repository.ClasRepository;
 import com.krukowska.repository.StudentRepository;
 import com.krukowska.service.IStudentService;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
 public class StudentService implements IStudentService {
     private final StudentRepository studentRepository ;
     private final StudentConverter studentConverter;
+    private final ClasRepository clasRepository;
 
-    public StudentService(StudentRepository studentRepository, StudentConverter studentConverter) {
+    public StudentService(StudentRepository studentRepository, StudentConverter studentConverter, ClasRepository clasRepository) {
         this.studentRepository = studentRepository;
         this.studentConverter = studentConverter;
+        this.clasRepository = clasRepository;
     }
 
     public List<StudentDTO> findAll() {
@@ -37,14 +42,15 @@ public class StudentService implements IStudentService {
           return studentConverter.toDTO(student);
     }
 
-    public StudentDTO createStudent(StudentRequest createStudentRequest) {
-
+    public StudentDTO createStudent(StudentRequest studentRequest) {
+        Clas clas = clasRepository.findClass(studentRequest.getSubject(), studentRequest.getYear());
         Student student = new Student(
-                createStudentRequest.getFirstName(),
-                createStudentRequest.getLastName(),
-                createStudentRequest.getPesel(),
-                createStudentRequest.getSubject(),
-                createStudentRequest.getClassGroup());
+                studentRequest.getFirstName(),
+                studentRequest.getLastName(),
+                studentRequest.getPesel(),
+                studentRequest.getSubject(),
+                studentRequest.getYear(),
+                clas);
         return studentConverter.toDTO(studentRepository.save(student));
     }
 

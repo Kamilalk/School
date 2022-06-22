@@ -17,6 +17,6 @@ public class StudentDTO {
     private Integer age;
     private Gender gender;
     private Subject subject;
-    private Year classGroup;
+    private Year year;
     private String pesel;
 }

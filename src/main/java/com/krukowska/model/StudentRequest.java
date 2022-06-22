@@ -1,5 +1,6 @@
 package com.krukowska.model;
 import com.krukowska.domain.enums.Subject;
+import com.krukowska.domain.enums.Year;
 import lombok.*;
 
 @Getter
@@ -10,7 +11,7 @@ public class StudentRequest {
     private String firstName;
     private String lastName;
     private String pesel;
-    private String subject;
-    private String classGroup;
+    private Subject subject;
+    private Year year;
 
 }

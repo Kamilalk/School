@@ -15,7 +15,7 @@ public class StudentConverter {
                 .age(student.getAge())
                 .gender(student.getGender())
                 .subject(student.getSubject())
-                .classGroup(student.getYear())
+                .year(student.getYear())
                 .pesel(student.getPesel())
                 .build();
     }
@@ -27,7 +27,7 @@ public class StudentConverter {
                 .age(studentDTO.getAge())
                 .gender(studentDTO.getGender())
                 .subject(studentDTO.getSubject())
-                .year(studentDTO.getClassGroup())
+                .year(studentDTO.getYear())
                 .pesel(studentDTO.getPesel())
                 .build();
     }

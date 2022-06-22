@@ -54,20 +54,20 @@ public class Student {
     @ManyToOne
     @JoinColumn(
             name = "clas_id",
-            referencedColumnName = "id",
-            nullable = false
+            referencedColumnName = "id"
     )
     private Clas clas;
 
-    public Student(String firstName, String lastName, String pesel, String subject, String classGroup) {
+    public Student(String firstName, String lastName, String pesel, Subject subject, Year year, Clas clas) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = PeselValidator.getAge(pesel);
         this.gender = PeselValidator.getSex(pesel);
-        this.subject = Subject.valueOf(subject);
-        this.year = Year.valueOf(classGroup);
+        this.subject = subject;
+        this.year = year;
         this.pesel = pesel;
         this.dob = PeselValidator.getBirthDate(pesel);
+        this.clas = clas;
     }
 
 }
