@@ -13,3 +13,5 @@ databaseChangeLog:
       file: classpath:db/changelog/schema/6-update-student.sql
   - include:
       file: classpath:db/changelog/schema/7-update-clas.sql
+  - include:
+      file: classpath:db/changelog/schema/8-create-attachment.sql

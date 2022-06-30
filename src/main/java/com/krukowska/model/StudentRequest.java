@@ -1,8 +1,8 @@
 package com.krukowska.model;
+
 import com.krukowska.domain.enums.Subject;
 import com.krukowska.domain.enums.Year;
 import lombok.*;
-
 @Getter
 @Setter
 @NoArgsConstructor

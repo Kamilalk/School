@@ -6,7 +6,6 @@ import com.krukowska.domain.enums.Subject;
 import com.krukowska.validator.PeselValidator;
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
 import java.time.LocalDate;
 

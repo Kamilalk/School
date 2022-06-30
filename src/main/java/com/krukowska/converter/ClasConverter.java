@@ -3,7 +3,6 @@ package com.krukowska.converter;
 import com.krukowska.domain.Clas;
 import com.krukowska.model.ClasDTO;
 import org.springframework.stereotype.Component;
-
 @Component
 public class ClasConverter {
 

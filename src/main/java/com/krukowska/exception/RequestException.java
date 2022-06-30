@@ -1,7 +1,6 @@
 package com.krukowska.exception;
 
 import org.springframework.http.HttpStatus;
-
 public class RequestException extends RuntimeException {
     private final HttpStatus status;
 

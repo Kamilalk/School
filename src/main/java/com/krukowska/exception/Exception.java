@@ -2,7 +2,6 @@ package com.krukowska.exception;
 
 import lombok.Getter;
 import org.springframework.http.HttpStatus;
-
 import java.time.ZonedDateTime;
 
 @Getter

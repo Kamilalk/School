@@ -5,8 +5,6 @@ import com.krukowska.domain.Teacher;
 import com.krukowska.domain.enums.Subject;
 import com.krukowska.domain.enums.Year;
 import lombok.*;
-
-import java.util.List;
 import java.util.Set;
 
 @Getter

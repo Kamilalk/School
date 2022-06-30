@@ -4,12 +4,11 @@ import com.krukowska.model.ClasDTO;
 import com.krukowska.model.CreateClasRequest;
 import com.krukowska.service.IClasService;
 import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping("api/clas")
 public class ClasController {
     private final IClasService classService;
@@ -36,7 +35,7 @@ public class ClasController {
         return classService.findById(id);
     }
 
-    @GetMapping
+    @GetMapping("/findAll")
     @ResponseStatus(HttpStatus.OK)
     public List<ClasDTO> findAllClas() {
         return classService.findAll();
